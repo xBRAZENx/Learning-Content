@@ -1,0 +1,19 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+       
+        Queue<String> myQueue = new LinkedList<>();
+
+      
+        myQueue.add("Apple");
+        myQueue.add("Banana");
+        myQueue.add("Orange");
+
+        
+        while (!myQueue.isEmpty()) {
+            System.out.println(myQueue.poll());
+        }
+    }
+}

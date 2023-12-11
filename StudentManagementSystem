@@ -1,0 +1,95 @@
+import java.io.*;
+import java.util.Scanner;
+
+class Student {
+    private String name;
+    private int rollNumber;
+    private double marks;
+
+    public Student(String name, int rollNumber, double marks) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    public void calculateGrade() {
+        System.out.println("Calculating grade for " + name);
+        
+    }
+}
+
+class GraduateStudent extends Student {
+    public GraduateStudent(String name, int rollNumber, double marks) {
+        super(name, rollNumber, marks);
+    }
+    @Override
+    public void calculateGrade() {
+        System.out.println("Calculating grade for graduate student: " + getName());
+    }
+}
+
+public class StudentManagementSystem {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter student details:");
+
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Roll Number: ");
+        int rollNumber = scanner.nextInt();
+
+        System.out.print("Marks: ");
+        double marks = scanner.nextDouble();
+        Student student = new Student(name, rollNumber, marks);
+        student.calculateGrade();
+        writeToFile(student);
+        readFromFile();
+
+        scanner.close();
+    }
+
+    public static void writeToFile(Student student) {
+        try (FileWriter fw = new FileWriter("student.txt")) {           
+            fw.write(student.getName());
+            System.out.println("Student details written to file.");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    private static void readFromFile() {
+        try (FileReader fw = new FileReader(("student.txt"))) {
+            System.out.println(fw.read());
+        } catch (IOException e) {
+            System.err.println("Error reading from file: " + e.getMessage());
+        }
+       
+    }
+}

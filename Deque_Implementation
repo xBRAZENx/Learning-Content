@@ -1,0 +1,19 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class DequeExample {
+    public static void main(String[] args) {
+        
+        Deque<String> myDeque = new ArrayDeque<>();
+
+        
+        myDeque.addFirst("Front");
+        myDeque.addFirst("Middle");
+        myDeque.addFirst("Rear");
+
+        
+        while (!myDeque.isEmpty()) {
+            System.out.println(myDeque.pollLast());
+        }
+    }
+}
