@@ -1,0 +1,10 @@
+public class OutOfMemoryExample {
+    public static void main(String[] args) {
+        try {
+            // Create an infinite array, which will eventually exhaust memory and give OutOfMemory Error
+            // int[] arr = new int[Integer.MAX_VALUE];
+        } catch (OutOfMemoryError e) {
+            System.out.println("OutOfMemoryError encountered: " + e.getMessage());
+        }
+    }
+}
