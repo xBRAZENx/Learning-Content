@@ -1,6 +1,7 @@
-package com.atharva.Searching;
+package com.Searching.test;
 
 public class Employee {
+
 
 	 private int empId;
 	    private String empName;
@@ -52,4 +53,4 @@ public class Employee {
 					+ ", department=" + department + "]";
 		}
 		
-		}
+}

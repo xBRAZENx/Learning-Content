@@ -1,7 +1,7 @@
-package com.atharva.Searching;
+package com.Searching.test;
 
 public class Department {
-	
+
 	 private int deptId;
 	    private String deptName;
 
@@ -31,5 +31,4 @@ public class Department {
 			return "Department [deptId=" + deptId + ", deptName=" + deptName + "]";
 		}
 	    
-
 }
